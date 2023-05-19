@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Area;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AreaController extends Controller
 {
@@ -35,6 +36,10 @@ class AreaController extends Controller
         $a->nombre = $r->nombre ;
         $a->descripcion = $r->descripcion;
         $a->save();
+
+       // session()->flash('VentasRegistrada', 'Registro exitoso!!');
+        // Session::fl('VentasRegistrada', 'Registro exitoso!!');
+        session::flash('VentasRegistrada', 'Registro exitoso!!');
 
         return redirect()->route('areas.index');
     }

@@ -10,6 +10,17 @@
         href="{{ route('areas.create') }}"> AGREGAR NUEVA AREA </a>
     </div>
 
+    @if (Session('VentasRegistrada'))
+    {{-- @if (session('estado') == true) --}}
+    <div id="myDiv" class="animate-bounce  fixed z-50  top-12 right-3 py-2 px-3 w-fit rounded-lg bg-lime-600 ">
+     <p> {{ Session('VentasRegistrada') }}  hola xd </p>
+     @php
+         Session::flush();
+     @endphp
+     {{-- Session::forget('key') --}}
+    </div>
+  @endif
+
         <div class=" bg-gray-100 w-full  font-sans overflow-hidden">
                 <div class="bg-white shadow-md rounded">
                     <table class="min-w-max w-full table-auto">
